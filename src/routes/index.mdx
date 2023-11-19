@@ -3,7 +3,7 @@ title: Introduction
 description: Re-usable components built using Radix UI and Tailwind CSS.
 ---
 
-import { AccordionRoot, AccordionItem, AccordionTrigger, AccordionContent } from '@qwik-ui/headless';
+import { Accordion } from '~/components/accordion';
 import { Slider } from "qwik-slider";
 
 
@@ -20,65 +20,8 @@ _Use this as a reference to build your own component libraries._
 ## FAQ
 
 
-<AccordionRoot behavior="multi" collapsible animated>
+<Accordion />
 
-<AccordionItem value="faq-1">
-  <div class="flex">
-    <AccordionTrigger>
-      Why copy/paste and not packaged as a dependency?
-    </AccordionTrigger>
-	</div>
-  <AccordionContent>
-The idea behind this is to give you ownership and control over the code, allowing you to decide how the components are built and styled.
-
-Start with some sensible defaults, then customize the components to your needs.
-
-One of the drawback of packaging the components in an npm package is that the style is coupled with the implementation. _The design of your components should be separate from their implementation._
-
-  </AccordionContent>
-</AccordionItem>
-
-<AccordionItem value="faq-2">
-  <div class="flex">
-    <AccordionTrigger>
-      Do you plan to publish it as an npm package?
-    </AccordionTrigger>
-  </div>
-  <AccordionContent>
-    No. I have no plans to publish it as an npm package.
-  </AccordionContent>
-</AccordionItem>
-
-<AccordionItem value="faq-3">
-  <div class="flex">
-    <AccordionTrigger>Which frameworks are supported?</AccordionTrigger>
-  </div>
-  <AccordionContent>
-    You can use any framework that supports React.
-    [Next.js](https://ui.shadcn.com/docs/installation/next),
-    [Astro](https://ui.shadcn.com/docs/installation/astro),
-    [Remix](https://ui.shadcn.com/docs/installation/remix),
-    [Gatsby](https://ui.shadcn.com/docs/installation/gatsby) etc.
-  </AccordionContent>
-</AccordionItem>
-
-  <AccordionItem value="faq-4">
-    <div class="flex">
-      <AccordionTrigger>
-      Can I use this in my project?
-      </AccordionTrigger>
-    </div>
-      <AccordionContent>
-
-Yes. Free to use for personal and commercial projects. No attribution required.
-
-But hey, let me know if you do. I'd love to see what you build.
-
-    </AccordionContent>
-
-  </AccordionItem>
-
-</AccordionRoot>
 
 <hr/>
 
@@ -89,3 +32,7 @@ But hey, let me know if you do. I'd love to see what you build.
   <div class="bg-red-200">Card 2</div>
   <div class="bg-blue-200">Card 3</div>
 </Slider>
+
+
+### Modal
+

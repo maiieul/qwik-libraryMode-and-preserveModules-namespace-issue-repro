@@ -11,18 +11,15 @@ dependencies:
   '@qwikest/icons':
     specifier: ^0.0.13
     version: 0.0.13(@builder.io/qwik@1.2.18)
+  body-scroll-lock:
+    specifier: 4.0.0-beta.0
+    version: 4.0.0-beta.0
   clsx:
     specifier: ^2.0.0
     version: 2.0.0
-  country-list-json:
-    specifier: ^1.1.0
-    version: 1.1.0
-  libphonenumber-js:
-    specifier: ^1.10.49
-    version: 1.10.49
-  qwik-slider:
-    specifier: ^1.1.0
-    version: 1.1.0
+  focus-trap:
+    specifier: ^7.5.4
+    version: 7.5.4
   tailwind-merge:
     specifier: ^2.0.0
     version: 2.0.0
@@ -35,8 +32,8 @@ devDependencies:
     specifier: ^1.2.18
     version: 1.2.18(@types/node@20.9.1)
   '@qwik-ui/headless':
-    specifier: ^0.1.17
-    version: 0.1.17(@builder.io/qwik@1.2.18)
+    specifier: ^0.1.18
+    version: 0.1.18(@builder.io/qwik@1.2.18)
   '@types/eslint':
     specifier: ^8.44.7
     version: 8.44.7
@@ -368,18 +365,11 @@ packages:
     dependencies:
       '@floating-ui/utils': 0.1.6
 
-  /@floating-ui/dom@1.0.10:
-    resolution: {integrity: sha512-ZRe5ZmtGYCd82zrjWnnMW8hN5H1otedLh0Ur6rRo6f0exbEe6IlkVvo1RO7tgiMvbF0Df8hkhdm50VcVYqwP6g==}
-    dependencies:
-      '@floating-ui/core': 1.5.0
-    dev: true
-
   /@floating-ui/dom@1.5.3:
     resolution: {integrity: sha512-ClAbQnEqJAKCJOEbbLo5IUlZHkNszqhuxS4fHAVxRPXPya6Ysf2G8KypnYcOTpx6I8xcgF9bbHb6g/2KpbV8qA==}
     dependencies:
       '@floating-ui/core': 1.5.0
       '@floating-ui/utils': 0.1.6
-    dev: false
 
   /@floating-ui/utils@0.1.6:
     resolution: {integrity: sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==}
@@ -479,16 +469,25 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@qwik-ui/headless@0.1.17(@builder.io/qwik@1.2.18):
-    resolution: {integrity: sha512-nOOnhrg54txLOXAVSKOuwdOyiHLiW3xeVpIlnpeLf3CVvAEwQPLB+WZGDof03dehKPvKwK6TpSy5oCvLeBsNBw==}
+  /@qwik-ui/headless@0.1.18(@builder.io/qwik@1.2.18):
+    resolution: {integrity: sha512-2s9dZ268jF5O3SDJ+fT2Gz73NdQ1UDyXfCuAkuW+IA181ThRn1EnKZiIsPAiLlA7eXmpLTzyZtKkgeoxuogNiQ==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
-      '@builder.io/qwik': '>1.2.11'
+      '@builder.io/qwik': '>=1.2.18'
     dependencies:
       '@builder.io/qwik': 1.2.18(@types/node@20.9.1)(undici@5.27.2)
-      '@floating-ui/dom': 1.0.10
+      '@floating-ui/dom': 1.5.3
+      '@qwik-ui/utils': 0.0.1
+      body-scroll-lock: 4.0.0-beta.0
       country-list-json: 1.1.0
+      focus-trap: 7.5.4
       libphonenumber-js: 1.10.49
+    dev: true
+
+  /@qwik-ui/utils@0.0.1:
+    resolution: {integrity: sha512-oYpk1igjxyTtaPYnGNU1IBhKVFMhyOpyb6mi26aNnGgI2+hEF9vz/VdKFUzHm4Y6VqTchZg50rW66W2mna8Fmw==}
+    dependencies:
+      tailwind-merge: 1.14.0
     dev: true
 
   /@qwikest/icons@0.0.13(@builder.io/qwik@1.2.18):
@@ -880,6 +879,9 @@ packages:
       readable-stream: 3.6.2
     dev: true
 
+  /body-scroll-lock@4.0.0-beta.0:
+    resolution: {integrity: sha512-a7tP5+0Mw3YlUJcGAKUqIBkYYGlYxk2fnCasq/FUph1hadxlTRjF+gAcZksxANnaMnALjxEddmSi/H3OR8ugcQ==}
+
   /boolbase@1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
     dev: true
@@ -1036,6 +1038,7 @@ packages:
 
   /country-list-json@1.1.0:
     resolution: {integrity: sha512-9a6sGBVXq3rXmZlddQQIjk0ZAk/pfBwVMUU1zJczWtIG4VcfUKp8HDSMteK1bBZVznE7+wWVg6kntxtzDBjvPQ==}
+    dev: true
 
   /cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
@@ -1555,6 +1558,11 @@ packages:
     resolution: {integrity: sha512-36yxDn5H7OFZQla0/jFJmbIKTdZAQHngCedGxiMmpNfEZM0sdEeT+WczLQrjK6D7o2aiyLYDnkw0R3JK0Qv1RQ==}
     dev: true
 
+  /focus-trap@7.5.4:
+    resolution: {integrity: sha512-N7kHdlgsO/v+iD/dMoJKtsSqs5Dz/dXZVebRgJw23LDk+jMi/974zyiOYDziY2JPp8xivq9BmUGwIJMiuSBi7w==}
+    dependencies:
+      tabbable: 6.2.0
+
   /for-each@0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
     dependencies:
@@ -2041,6 +2049,7 @@ packages:
 
   /libphonenumber-js@1.10.49:
     resolution: {integrity: sha512-gvLtyC3tIuqfPzjvYLH9BmVdqzGDiSi4VjtWe2fAgSdBf0yt8yPmbNnRIHNbR5IdtVkm0ayGuzwQKTWmU0hdjQ==}
+    dev: true
 
   /lilconfig@2.1.0:
     resolution: {integrity: sha512-utWOt/GHzuUxnLKxB6dk81RoOeoNeHgbrXiuGk4yyF5qlRz+iIVWu56E2fqGHFrXz0QNUhLB/8nKqvRH66JKGQ==}
@@ -2880,11 +2889,6 @@ packages:
     resolution: {integrity: sha512-kJt5qhMxoszgU/62PLP1CJytzd2NKetjSRnyuj31fDd3Rlcz3fzlFdFLD1SItunPwyqEOkca6GbV612BWfaBag==}
     dev: true
 
-  /qwik-slider@1.1.0:
-    resolution: {integrity: sha512-PCHzvb/FWQ2Fe+XlrE5geHPAIBH7hxfE+B6P2mXtLxYfUCmEb9iVfhJvc+zwfur7Httt5ds8n+gd6RnXPw1sLg==}
-    engines: {node: '>=15.0.0'}
-    dev: false
-
   /rc@1.2.8:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
     hasBin: true
@@ -3229,6 +3233,13 @@ packages:
       css-tree: 2.3.1
       csso: 5.0.5
       picocolors: 1.0.0
+    dev: true
+
+  /tabbable@6.2.0:
+    resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
+
+  /tailwind-merge@1.14.0:
+    resolution: {integrity: sha512-3mFKyCo/MBcgyOTlrY8T7odzZFx+w+qKSMAmdFzRvqBfLlSigU6TZnlFHK0lkMwj9Bj8OYU+9yW9lmGuS0QEnQ==}
     dev: true
 
   /tailwind-merge@2.0.0:

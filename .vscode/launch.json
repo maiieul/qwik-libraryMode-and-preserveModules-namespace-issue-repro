@@ -4,6 +4,7 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+
     {
       "type": "node",
       "name": "dev.debug",
@@ -12,6 +13,24 @@
       "cwd": "${workspaceFolder}",
       "program": "${workspaceFolder}/node_modules/vite/bin/vite.js",
       "args": ["--mode", "ssr", "--force"]
-    }
+    },
+    {
+      "type": "node",
+      "name": "build.client",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/node_modules/vite/bin/vite.js",
+      "args": ["build"]
+    },
+    {
+      "type": "node",
+      "name": "build.server",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/node_modules/vite/bin/vite.js",
+      "args": ["build", "-c", "adapters/cloudflare-pages/vite.config.ts"]
+    },
   ]
 }

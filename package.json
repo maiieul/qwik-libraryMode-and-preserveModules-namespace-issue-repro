@@ -26,7 +26,7 @@
   "devDependencies": {
     "@builder.io/qwik": "^1.2.18",
     "@builder.io/qwik-city": "^1.2.18",
-    "@qwik-ui/headless": "^0.1.18",
+    "@qwik-ui/headless": "^0.1.17",
     "@types/eslint": "^8.44.7",
     "@types/node": "^20.9.1",
     "@typescript-eslint/eslint-plugin": "^6.11.0",
@@ -38,17 +38,14 @@
     "prettier": "^3.1.0",
     "prettier-plugin-tailwindcss": "^0.5.7",
     "tailwindcss": "3.3.3",
-    "typescript": "^5.2.2",
+    "typescript": "5.2.2",
     "undici": "^5.27.2",
     "vite": "^4.5.0",
     "vite-tsconfig-paths": "^4.2.1"
   },
   "dependencies": {
     "@floating-ui/dom": "^1.5.3",
-    "@qwikest/icons": "^0.0.13",
     "body-scroll-lock": "4.0.0-beta.0",
-    "clsx": "^2.0.0",
-    "focus-trap": "^7.5.4",
-    "tailwind-merge": "^2.0.0"
+    "focus-trap": "^7.5.4"
   }
 }
